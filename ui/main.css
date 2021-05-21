@@ -1,0 +1,261 @@
+/* ================= Generic */
+*, *::before {
+    box-sizing: border-box;
+}
+
+:root {
+    --blue-1: hsl(210deg 90% 40%);
+    --blue-2: hsl(210deg 90% 40% / 60%);
+    --black: #181717;
+    --darkgray-1: hsl(200deg 2% 28%);
+    --darkgray-2: hsl(200deg 2% 40%);
+    --gray-1: hsl(210deg 11% 97%);
+    --gray-2: hsl(216deg 11% 93%);
+    --gray-3: hsl(210deg 11% 91%);
+}
+
+html,
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.5;
+    margin: 0;
+    min-height: 100vh;
+}
+
+body {
+    background-color: var(--gray-3);
+    color: var(--darkgray-1);
+}
+
+menu {
+    margin: 0;
+    padding: 0;
+}
+
+h1,h2,h3 {
+    color: var(--black);
+    margin: 0 0 1rem;
+}
+
+h1 {
+    font-size: 3rem;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-top: 2rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
+}
+
+h4, ul {
+    margin: 0 0 .7rem;
+}
+
+ul {
+    padding-left: 1.6rem;
+}
+
+p {
+    margin: 0 0 1rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+.link {
+    color: var(--blue-1);
+}
+
+.link:hover {
+    box-shadow: 0 2px 0 currentColor;
+}
+
+/* ================= Layout */
+.wrap {
+    margin: 0 auto;
+    max-width: 48rem;
+    padding: 0 1rem;
+}
+
+.site-header {
+    align-items: flex-end;
+    background-color: var(--gray-1);
+    border-bottom: 2px solid #ccc;
+    display: flex;
+    padding-top: 5rem;
+}
+
+.site-header .wrap {
+    flex: 1;
+}
+
+.site-header h3 {
+    color: var(--darkgray-2);
+}
+
+.site-content {
+    padding: 2rem 0;
+}
+
+.social-bar {
+    display: flex;
+}
+
+.social-bar a {
+    margin-right: 1rem;
+}
+
+/* ================= Button */
+.button {
+    appearance: none;
+    align-items: center;
+    background-color: var(--gray-2);
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    color: var(--darkgray-1);
+    cursor: pointer;
+    display: flex;
+    font-size: 90%;
+    font-weight: bold;
+    transition: all .2s;
+    padding: .5rem .75rem;
+    user-select: none;
+}
+
+.button .icon {
+    height: 1.5rem;
+    margin-right: .5rem;
+}
+
+.button:hover,
+.button:active,
+.button:focus {
+    background-color: #fff;
+}
+
+.button:active,
+.button:focus {
+    border-color: var(--blue-1);
+    box-shadow: 0 2px 6px 0 #ccc;
+    outline: 0;
+}
+
+/* ================= Timeline */
+.timeline {
+    list-style: none;
+    margin: 2rem 0;
+    padding: 0;
+}
+
+.timeline li {
+    border-left: 2px solid transparent;
+    padding-left: 2rem;
+    padding-bottom: 1rem;
+    position: relative;
+    list-style: none;
+}
+
+.timeline li:not(:last-child) {
+    border-left-color: var(--blue-2);
+}
+
+.timeline .marker {
+    background-color: var(--gray-3);
+    display: grid;
+    height: 30px;
+    place-items: center;
+    position: absolute;
+    left: -11px;
+    width: 20px;
+    z-index: 1;
+}
+
+.timeline .marker::before {
+    border: 2px solid var(--blue-1);
+    border-radius: 50%;
+    content: '';
+    display: block;
+    height: 20px;
+    position: absolute;
+    width: 20px;
+}
+
+.timeline .marker::after {
+    background-color: var(--blue-1);
+    content: '';
+    border-radius: 50%;
+    display: block;
+    height: 10px;
+    position: absolute;
+    width: 10px;
+}
+
+.timeline time {
+    align-items: center;
+    display: flex;
+    font-weight: bold;
+    font-size: 120%;
+    height: 30px;
+    margin-bottom: 1rem;
+}
+
+.timeline section {
+    background-color: var(--gray-1);
+    border-radius: 5px;
+    box-shadow: 0 4px 6px #cccccc20;
+    padding: .9rem 1.5rem;
+}
+
+.timeline .logo {
+    position: absolute;
+    top: calc(30px + 1rem);
+    left: 100%;
+    margin-left: 2rem;
+    pointer-events: none;
+}
+
+.logo img {
+    display: block;
+    user-select: none;
+}
+
+/* ================= Icons */
+.icon-list {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-auto-rows: min-content;
+    gap: .3rem 1rem;
+}
+
+.icon-list dt {
+    align-items: center;
+    display: flex;
+}
+
+.icon-list dd {
+    font-size: 90%;
+    font-weight: bold;
+    margin: 0;
+}
+
+.icon {
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: inline-block;
+    height: 1.1rem;
+    vertical-align: middle;
+    width: 1.1rem;
+}
+
+.icon.cmake { background-image: url('icons/cmake.svg'); }
+.icon.cpp { background-image: url('icons/cpp.svg'); }
+.icon.css { background-image: url('icons/css.svg'); }
+.icon.git { background-image: url('icons/git.svg'); }
+.icon.html { background-image: url('icons/html.svg'); }
+.icon.js { background-image: url('icons/js.svg'); }
+.icon.qt { background-image: url('icons/qt.svg'); }
