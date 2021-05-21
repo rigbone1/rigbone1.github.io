@@ -1,2 +1,2 @@
-# rigbone1.github.io
-Site (presently privated)
+# Portfolio
+This website hosts my portfolio content
