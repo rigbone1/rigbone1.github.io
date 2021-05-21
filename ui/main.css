@@ -67,11 +67,11 @@ a {
     text-decoration: none;
 }
 
-.link {
+a {
     color: var(--blue-1);
 }
 
-.link:hover {
+a:not(.button):hover {
     box-shadow: 0 2px 0 currentColor;
 }
 
@@ -208,7 +208,11 @@ a {
     background-color: var(--gray-1);
     border-radius: 5px;
     box-shadow: 0 4px 6px #cccccc20;
-    padding: .9rem 1.5rem;
+    padding: 1.2rem 1.5rem;
+}
+
+.timeline section :last-child {
+    margin-bottom: 0;
 }
 
 .timeline .logo {
