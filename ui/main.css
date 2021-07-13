@@ -15,7 +15,7 @@
 }
 
 body {
-    background-color: var(--body-bg);
+    background-color: var(--body-bg-color);
     color: var(--c-black);
     font-family: 'Inter',system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;
     line-height: 1.5;
