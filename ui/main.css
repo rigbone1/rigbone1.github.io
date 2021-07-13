@@ -4,27 +4,32 @@
 }
 
 :root {
-    --blue-1: hsl(210deg 90% 40%);
-    --blue-2: hsl(210deg 90% 40% / 60%);
-    --black: #181717;
-    --darkgray-1: hsl(200deg 2% 28%);
-    --darkgray-2: hsl(200deg 2% 40%);
-    --gray-1: hsl(210deg 11% 97%);
-    --gray-2: hsl(216deg 11% 93%);
-    --gray-3: hsl(210deg 11% 91%);
+    --c-blue: #0069ff;
+    --c-black: #333;
+    --c-grey-dark: #7a8390;
+    --c-grey: #ddd;
+    --c-white: #f6f6f6;
+
+    --body-bg-color: #fff;
+    --b-radius: 3px;
 }
 
-html,
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--body-bg);
+    color: var(--c-black);
+    font-family: 'Inter',system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;
     line-height: 1.5;
     margin: 0;
-    min-height: 100vh;
+    -moz-osx-font-smoothing: grayscale;
+    -ms-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
 }
 
-body {
-    background-color: var(--gray-3);
-    color: var(--darkgray-1);
+::selection {
+    background-color: #22f;
+    color: #fff;
 }
 
 menu {
@@ -33,7 +38,6 @@ menu {
 }
 
 h1,h2,h3 {
-    color: var(--black);
     margin: 0 0 1rem;
 }
 
@@ -43,7 +47,6 @@ h1 {
 
 h2 {
     font-size: 2rem;
-    margin-top: 2rem;
 }
 
 h3 {
@@ -56,6 +59,7 @@ h4, ul {
 }
 
 ul {
+    list-style: disc;
     padding-left: 1.6rem;
 }
 
@@ -64,11 +68,8 @@ p {
 }
 
 a {
+    color: var(--c-blue);
     text-decoration: none;
-}
-
-a {
-    color: var(--blue-1);
 }
 
 a:not(.button):hover {
@@ -84,46 +85,56 @@ a:not(.button):hover {
 
 .site-header {
     align-items: flex-end;
-    background-color: var(--gray-1);
-    border-bottom: 2px solid #ccc;
+    border-bottom: 1px solid var(--c-grey);
     display: flex;
-    padding-top: 5rem;
+    font-weight: bold;
+    padding: 2rem 0;
 }
 
 .site-header .wrap {
     flex: 1;
 }
 
+.site-header h1,
 .site-header h3 {
-    color: var(--darkgray-2);
+    margin: 0;
+}
+
+.site-header h3 {
+    color: var(--c-grey-dark);
 }
 
 .site-content {
     padding: 2rem 0;
 }
 
-.social-bar {
+.button-bar {
     display: flex;
 }
 
-.social-bar a {
+.button-bar a {
     margin-right: 1rem;
+}
+
+.section-title {
+    margin-top: 1.5rem;
 }
 
 /* ================= Button */
 .button {
     appearance: none;
     align-items: center;
-    background-color: var(--gray-2);
-    border: 1px solid #ccc;
-    border-radius: 6px;
+    border: 1px solid;
+    border-radius: var(--b-radius);
     color: var(--darkgray-1);
+    color: var(--black);
     cursor: pointer;
     display: flex;
     font-size: 90%;
     font-weight: bold;
+    line-height: 2.25rem;
     transition: all .2s;
-    padding: .5rem .75rem;
+    padding: 0 .75rem;
     user-select: none;
 }
 
@@ -133,15 +144,15 @@ a:not(.button):hover {
 }
 
 .button:hover,
-.button:active,
 .button:focus {
     background-color: #fff;
+    box-shadow: 0 2px 6px 0 #ccc;
+    color: var(--c-grey-dark);
 }
 
 .button:active,
 .button:focus {
     border-color: var(--blue-1);
-    box-shadow: 0 2px 6px 0 #ccc;
     outline: 0;
 }
 
@@ -152,7 +163,7 @@ a:not(.button):hover {
     padding: 0;
 }
 
-.timeline li {
+.timeline > li {
     border-left: 2px solid transparent;
     padding-left: 2rem;
     padding-bottom: 1rem;
@@ -160,12 +171,12 @@ a:not(.button):hover {
     list-style: none;
 }
 
-.timeline li:not(:last-child) {
-    border-left-color: var(--blue-2);
+.timeline > li:not(:last-child) {
+    border-left-color: var(--c-blue);
 }
 
-.timeline .marker {
-    background-color: var(--gray-3);
+.timeline__marker {
+    background-color: var(--body-bg-color);
     display: grid;
     height: 30px;
     place-items: center;
@@ -175,8 +186,8 @@ a:not(.button):hover {
     z-index: 1;
 }
 
-.timeline .marker::before {
-    border: 2px solid var(--blue-1);
+.timeline__marker::before {
+    border: 2px solid var(--c-blue);
     border-radius: 50%;
     content: '';
     display: block;
@@ -185,8 +196,8 @@ a:not(.button):hover {
     width: 20px;
 }
 
-.timeline .marker::after {
-    background-color: var(--blue-1);
+.timeline__marker::after {
+    background-color: var(--c-blue);
     content: '';
     border-radius: 50%;
     display: block;
@@ -205,9 +216,8 @@ a:not(.button):hover {
 }
 
 .timeline section {
-    background-color: var(--gray-1);
-    border-radius: 5px;
-    box-shadow: 0 4px 6px #cccccc20;
+    border: 1px solid var(--c-grey);
+    border-radius: var(--b-radius);
     padding: 1.2rem 1.5rem;
 }
 
