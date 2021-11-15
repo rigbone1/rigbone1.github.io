@@ -1,0 +1,33 @@
+body {
+  background-color: #fafafa;
+  color: #333;
+  font-family: sans-serif;
+  line-height: 1.6;
+  margin: 3rem auto;
+  max-width: 640px;
+}
+
+h1, h2, h3 {
+  line-height: 1.2;
+}
+
+.group {
+  margin-bottom: 2rem;
+}
+
+.year {
+  align-items: center;
+  color: #888;
+  display: flex;
+  font-weight: bold;
+  font-style: italic;
+  margin: 2rem 0;
+}
+
+.year::after {
+  background-color: currentColor;
+  content: '';
+  height: 1px;
+  flex-grow: 1;
+  margin-left: 1rem;
+}
