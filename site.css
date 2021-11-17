@@ -8,6 +8,19 @@ body {
   padding: 0 1rem;
 }
 
+a {
+  color: #00E;
+  text-decoration: none;
+}
+
+a:hover  {
+  border-bottom: 1px solid;
+}
+
+a:active {
+  color: crimson;
+}
+
 h1, h2, h3 {
   line-height: 1.2;
 }
