@@ -3,7 +3,8 @@ body {
   color: #333;
   font-family: sans-serif;
   line-height: 1.6;
-  margin: 3rem auto;
+  margin-inline: auto;
+  margin-block:  3rem;
   max-width: 640px;
   padding: 0 1rem;
 }
@@ -29,26 +30,49 @@ h1, h2, h3 {
   margin-bottom: 2rem;
 }
 
-.year {
-  align-items: center;
-  color: #888;
+.tags {
   display: flex;
-  font-weight: bold;
-  font-style: italic;
-  margin: 2rem 0;
+  flex-wrap: wrap;
+  margin: -0.25rem;
 }
 
-.year::after {
+.tag {
+  background-color: #e1e1e1;
+  border-radius: 4px;
+  font-size: 90%;
+  font-weight: bold;
+  line-height: 24px;
+  margin: 0.25rem;
+  padding-inline: 0.5rem;
+}
+
+.year {
+  color: #888;
+  display: grid;
+  margin-block: 2rem;
+  place-items: center;
+  position: relative;
+}
+
+.year>span {
+  background-color: #fafafa;
+  font-weight: bold;
+  font-style: italic;
+  padding-inline: 1rem;
+  z-index: 1;
+}
+
+.year::before {
   background-color: currentColor;
   content: '';
   height: 1px;
-  flex-grow: 1;
-  margin-left: 1rem;
+  position: absolute;
+  width: 100%;
 }
 
 @media screen and (max-width: 672px) {
   body {
-    margin: 1rem 0;
+    margin-block: 1rem;
   }
   
   header {
