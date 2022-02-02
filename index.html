@@ -6,59 +6,98 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>David Graham</title>
   <link rel="stylesheet" href="site.css">
+  <script src="site.js"></script>
 </head>
 <body>
-  <header>
-    <h1>David Graham</h1>
-    <p><strong>Student & Developer</strong></p>
-  </header>
-  <hr>
-  <h2>About</h2>
-  <p>A student at <a href="https://www.rgu.ac.uk/">RGU</a> who possesses an ever-growing love and fascination for all boughs of software development, be it web, desktop or mobile.</p>
-  <p>I'm mainly concerned with the front-end and prefer to handcraft my interfaces. I'm familiar with a broad selection of tools and languages, but consider JavaScript my strongest.</p>
-  <p>I typically use NodeJS for my back-end and MongoDB for my database.<br>In my formative days, I used PHP on Apache with MySQL.</p>
-  <h3>Links</h3>
-  <menu>
-    <li><a href="https://www.linkedin.com/in/david-graham-dev/">LinkedIn</a></li>
-    <li><a href="https://github.com/daveg1/">GitHub</a></li>
-  </menu>
-  <h2>Experience</h2>
-  <div id="timeline">
-    <div class="year"><span>2021</span></div>
-    <div class="group">
-      <h3 id="fugro">Fugro</h3>
-      <p>Over the summer, I worked in a professional software team for the geo-intelligence company Fugro to help produce user interface components. The UI was built on the Qt framework.</p>
-      <p>I was tasked with creating components based on Figma designs. While I primarily used QML, I also made custom implementations of components using C++.</p>
-      <p>I also learned to write unit tests, both in QML using QTest and in C++ using gtest.</p>
-      <div class="tags">
-        <span class="tag">Qt</span>
-        <span class="tag">QML</span>
-        <span class="tag">C++</span>
-        <span class="tag">Unit Tests</span>
+  <nav class="SiteMenu">
+    <a class="SiteLink active" data-target="home">Home</a>
+    <a class="SiteLink" data-target="projects">Projects</a>
+    <a class="SiteLink" data-target="work">Work</a>
+  </nav>
+  <div class="SlideHolder">
+    <article id="home" class="Slide active">
+      <header>
+        <h1>David Graham</h1>
+        <h2 class="Subheading">Student & Software Dev</h2>
+      </header>
+      <p>A computer science student at Robert Gordon University who loves front-end software development.</p>
+      <p>My weapon of choice is JavaScript, though, through my studies, I am familiar with a variety of programming languages.</p>
+      <div class="Langs">
+        <div class="Lang">JS</div>
+        <div class="Lang">PHP</div>
+        <div class="Lang">Java</div>
+        <div class="Lang">Python</div>
+        <div class="Lang">QML</div>
+        <div class="Lang">SQL</div>
       </div>
-    </div>
-    <div class="year"><span>2020</span></div>
-    <div class="group">
-      <h3 id="attendr">Attendr App</h3>
-      <p>Following the hackathon, I was hired by the creators of Attendr to fully develop their interactive app demo.</p>
-      <p>The demo depicts the student and lecturer versions of the app and includes tooltips to guide the user through the app. The devices are brought to life with animations powered by JavaScript to enhance the user experience.</p>
-      <p>The demo is now in use on the app's <a href="https://attendr.app/">official website</a>.<br>See the demo in action <a href="https://attendr.app/demo/index.html">here</a>.</p>
-      <div class="tags">
-        <div class="tag">HTML & CSS</div>
-        <div class="tag">JavaScript</div>
-        <div class="tag">Animations</div>
-      </div>
-    </div>
-    <div class="group">
-      <h3 id="rgu-hackathon">RGU Hackathon</h3>
-      <p>I took part in a hackathon event hosted by my university where I and a small team created an interactive marketing demo for a mobile app developed by postgraduates.</p>
-      <p>Our team won with the best design.</p>
-      <p>The project is on <a href="https://github.com/rigbone1/hackathon-2020-attendr">GitHub</a>.</p>
-      <div class="tags">
-        <div class="tag">HTML & CSS</div>
-        <div class="tag">JavaScript</div>
-      </div>
-    </div>
+      <h2>Links</h2>
+      <nav>
+        <ul>
+          <li class="Link">
+            <span class="Link__Arrow">→</span>
+            <a href="https://www.linkedin.com/in/david-graham-dev/">LinkedIn</a>
+          </li>
+          <li class="Link">
+            <span class="Link__Arrow">→</span>
+            <a href="https://github.com/daveg1/">GitHub</a>
+          </li>
+        </ul>
+      </nav>
+    </article>
+    <article id="projects" class="Slide">
+      <header>
+        <h1>Projects</h1>
+      </header>
+      <h2>Todo</h2>
+    </article>
+    <article id="work" class="Slide">
+      <header>
+        <h1>Work History</h1>
+      </header>
+      <section>
+        <h2>Fugro North</h2>
+        <p><strong>2020</strong></p>
+        <p>During my second year at university, I undertook a student placement for three months at Fugro. Fugro is a geodata company where one area of their business is the manufacture and operation of Remotely Operated Vehicles (ROVs). I worked on an embedded-systems project involving a small touchscreen panel for ROV specialists.</p>
+        <p>My job entailed creating and testing user interface components using the Qt framework. I learned to make components in QML using the QtQuick 2 library. I also extended existing QML components using C++ to write custom functionality. I then tested my components with QTest in QML and Google Test in C++.</p>
+        <p>While on placement, I observed how a professional software team manages a project. The team used an agile approach, which introduced me to epics, sprint meetings and the Jira issue-tracking software. I also engaged in daily scrum meetings where I practised my communication with my peers.</p>
+        <div class="Langs">
+          <div class="Lang">Qt</div>
+          <div class="Lang">QML</div>
+          <div class="Lang">C++</div>
+          <div class="Lang">CMake</div>
+          <div class="Lang">Unit Tests</div>
+          <div class="Lang">Jira</div>
+        </div>
+      </section>
+      <section>
+        <h2>Attendr</h2>
+        <p><strong>2019</strong></p>
+        <p>After winning a Hackathon event, postgraduates at my university hired me to develop a web-based demo for their mobile app Attendr.</p>
+        <p>Attendr is an attendance-taking app marketed towards higher-learning institutions and consists of two versions: student and lecturer. The owners wanted an interactive demo that illustrated the attendance process, as well as the various features of the apps. </p>
+        <p>I used their designs to recreate each app's interface in HTML, CSS and JavaScript and created a way to highlight the features using tooltips. Furthermore, to make the app more lively, I incorporated animations written in JavaScript, including screen swipes and fade-outs.</p>
+        <p>The final result was well-received and is now live on the official Attendr website.</p>
+        <div class="Langs">
+          <div class="Lang">HTML</div>
+          <div class="Lang">CSS</div>
+          <div class="Lang">JS</div>
+          <div class="Lang">Animations</div>
+        </div>
+      </section>
+      </section>
+      <section>
+        <h2>RGU Hackathon</h2>
+        <p><strong>2019</strong></p>
+        <p>I attended a Hackathon event hosted by my university and entered a challenge where you had 24 hours to create the best-looking marketing page for a mobile app. The app was created by postgraduates of RGU who wanted an interactive, lifelike version of their app on a webpage.</p>
+        <p>I joined a small group to help design and implement the page. I created the webpage using HTML, CSS and JavaScript and used Git to save commits to our team's GitHub repository. After the challenge concluded, we won with the best webpage.</p>
+        <div class="Langs">
+          <div class="Lang">HTML</div>
+          <div class="Lang">CSS</div>
+          <div class="Lang">JS</div>
+          <div class="Lang">Git</div>
+          <div class="Lang">GitHub</div>
+        </div>
+      </section>
+    </article>
   </div>
 </body>
 </html>
