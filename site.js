@@ -24,6 +24,8 @@ function checkHistory() {
 }
 
 window.onload = e => {
+  checkHistory()
+
   const links = document.querySelectorAll('.SiteLink')
 
   links.forEach(link => {
