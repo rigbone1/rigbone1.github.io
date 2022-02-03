@@ -93,12 +93,12 @@ ul {
 }
 
 .Slide.active {
-  animation: slide-in forwards 200ms, fade-in forwards 500ms;
+  animation: slide-in forwards 350ms, fade-in forwards 500ms;
 }
 
 @keyframes slide-in {
   from {
-    transform: translateX(-0.75rem)
+    transform: translateX(-1rem)
   }
 
   to {
