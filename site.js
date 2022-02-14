@@ -1,43 +1,42 @@
-function changeSlide(target) {
-  const slide = document.getElementById(target)
-  const activeSlide = document.querySelector('.Slide.active')
-  const activeLink = document.querySelector('.SiteLink.active')
+const active = {
+  link: null,
+  slide: null,
+}
 
-  if (activeSlide) {
-    activeSlide.classList.remove('active')
+function changeSlide(name) {
+  const slide = document.querySelector(`[data-slide=${name}]`)
+
+  if (!slide) {
+    return;
   }
 
-  if (activeLink) {
-    activeLink.classList.remove('active')
+  if (active.link) {
+    active.link.classList.remove('active')
+  }
+  
+  if (active.slide) {
+    active.slide.classList.remove('active')
   }
 
-  slide.classList.add('active')
-  document.querySelector(`[data-target="${target}"]`).classList.add('active')
+  active.link = document.querySelector(`[href='#${name}']`)
+  active.slide = slide
+
+  active.link.classList.add('active')
+  active.slide.classList.add('active')
 }
 
 function checkHistory() {
   const url = new URL(document.location.href)
 
-  if (url.hash) {
+  if (!url.hash) {
+    changeSlide('home')
+  } else if (url.hash) {
     changeSlide(url.hash.slice(1))
   }
 }
 
 window.onload = e => {
   checkHistory()
-
-  const links = document.querySelectorAll('.SiteLink')
-
-  links.forEach(link => {
-    link.onclick = e => {
-      e.preventDefault()
-
-      const target = link.dataset.target
-
-      window.history.pushState(target, '', `#${target}`)
-      changeSlide(target)
-    }
-  })
 }
 
 window.onpopstate = e => {
