@@ -25,7 +25,7 @@ function changeSlide(name) {
   active.slide.classList.add('active')
 }
 
-function checkHistory() {
+export function checkHistory() {
   const url = new URL(document.location.href)
 
   if (!url.hash) {
@@ -33,12 +33,4 @@ function checkHistory() {
   } else if (url.hash) {
     changeSlide(url.hash.slice(1))
   }
-}
-
-window.onload = e => {
-  checkHistory()
-}
-
-window.onpopstate = e => {
-  checkHistory()
 }
