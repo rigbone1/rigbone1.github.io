@@ -1,0 +1,29 @@
+{
+  "name": "daveg1.github.io",
+  "version": "1.0.0",
+  "description": "My homepage.",
+  "main": "site.js",
+  "scripts": {
+    "build": "tailwindcss -i src/style.css -o dist/site.css",
+    "build:min": "tailwindcss -i src/style.css -o dist/site.css --minify",
+    "build:watch": "tailwindcss -i src/style.css -o dist/site.css --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daveg1/daveg1.github.io.git"
+  },
+  "keywords": [],
+  "author": "daveg1",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daveg1/daveg1.github.io/issues"
+  },
+  "homepage": "https://github.com/daveg1/daveg1.github.io#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.2",
+    "cssnano": "^5.0.17",
+    "postcss": "^8.4.6",
+    "tailwindcss": "^3.0.22"
+  }
+}
