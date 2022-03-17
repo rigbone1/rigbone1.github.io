@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>David Graham</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    if ((!('theme' in localStorage) || localStorage.theme === 'dark') && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.classList.add('dark')
+    }
+  </script>
+  <script src="script.js" type="module"></script>
+</head>
+<body>
+  <main>
+    <h1>Hello, I'm David</h1>
+    <p>I'm a software developer from Scotland. I currently study Computer Science at <a href="https://rgu.ac.uk/">Robert Gordon University</a>.</p>
+    <p>My favourite language to code in is <strong>JavaScript</strong> but I dabble many others too!</p>
+    <p>I host some of my uni and personal projects on <a href="https://github.com/daveg1/">GitHub</a> — feel free to check them out.</p>
+    <div>
+      <theme-toggle></theme-toggle>
+    </div>
+  </main>
+</body>
+</html>
