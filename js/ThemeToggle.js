@@ -73,6 +73,8 @@ class ThemeToggle extends HTMLElement {
   }
 
   connectedCallback() {
+    this.tabIndex = 0
+
     if (this.theme === 'dark') {
       this.setAttribute('dark', '')
     }
@@ -86,6 +88,12 @@ class ThemeToggle extends HTMLElement {
         localStorage.theme = 'dark'
         document.documentElement.classList.add('dark')
         this.setAttribute('dark', '')
+      }
+    })
+
+    this.addEventListener('keydown', e => {
+      if (e.code === 'Enter' || e.code === 'Space') {
+        this.click()
       }
     })
   }

@@ -40,7 +40,7 @@ a:hover {
   color: var(--link);
 }
 
-a:focus {
+:focus {
   box-shadow: none;
   border-radius: 0.25rem;
   color: var(--link-alt);
