@@ -6,6 +6,7 @@ globalThis.env = new Env();
 globalThis.terminal = new Terminal();
 globalThis.shell = new Shell();
 
+terminal.focus();
 shell.sendCommand('echo Welcome! Type `help` for info');
 
 window.addEventListener('click', (e) => {
