@@ -29,17 +29,38 @@ export class Terminal {
 		this.inputElem.focus();
 	}
 
-	print(text: string) {
+	print(text: string, parse = false) {
 		const line = document.createElement('li');
 		line.className = 'line';
 
 		const domain = this.inputElem.previousElementSibling!.cloneNode(true);
 		const command = document.createElement('span');
-		command.textContent = text;
+
+		if (parse) {
+			const parsedNodes = this.parseText(text);
+			command.append(...parsedNodes);
+		} else {
+			command.textContent = text;
+		}
 
 		line.append(domain, command);
 
 		this.linesElem.insertBefore(line, this.linesElem.lastElementChild);
+	}
+
+	private parseText(text: string) {
+		const splitText = text.split(/\n|\\n/g);
+		const nodes: Node[] = [];
+
+		const firstTextItem = splitText.shift();
+		nodes.push(document.createTextNode(`${firstTextItem}`));
+
+		for (const item of splitText) {
+			nodes.push(document.createElement('br'));
+			nodes.push(document.createTextNode(item));
+		}
+
+		return nodes;
 	}
 
 	clear() {

@@ -1,3 +1,3 @@
 export default function (...args: string[]) {
-	terminal.print(`"${args.join(' ')}"`);
+	terminal.print(args.join(' '), true);
 }

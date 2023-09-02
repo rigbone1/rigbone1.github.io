@@ -1,6 +1,6 @@
 import { Env } from '../classes/env';
 import { Shell } from '../classes/shell';
-import { Terminal } from '../terminal';
+import { Terminal } from '../classes/terminal';
 
 declare global {
 	var env: Env;
