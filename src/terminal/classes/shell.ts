@@ -20,7 +20,9 @@ export class Shell {
 
 	private async resolveCommand(commandName: string): Promise<Command> {
 		try {
-			return await import(`../commands/${commandName}`).then((m) => m.default);
+			return await import(`../commands/${commandName}.ts`).then(
+				(m) => m.default
+			);
 		} catch (e) {
 			throw new Error(`Command "${commandName}" not found`);
 		}
