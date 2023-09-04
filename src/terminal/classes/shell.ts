@@ -1,7 +1,13 @@
 import type { Command } from '../types/command';
 
 export class Shell {
-	sendCommand(line: string) {
+	readonly history: string[] = []
+
+	clearHistory() {
+		this.history.length = 0
+	}
+
+	async sendCommand(line: string) {
 		const args = line.split(/ +/g);
 		const commandName = args.shift();
 
@@ -9,13 +15,13 @@ export class Shell {
 			return;
 		}
 
-		this.resolveCommand(commandName)
-			.then((commandFn) => {
-				commandFn(...args);
-			})
-			.catch((err) => {
-				terminal.print(err.message);
-			});
+		try {
+			const commandFn = await this.resolveCommand(commandName)
+			this.history.push(line)
+			commandFn(...args);
+		} catch (err) {
+			terminal.print(`${err}`);
+		}
 	}
 
 	private async resolveCommand(commandName: string): Promise<Command> {
