@@ -2,9 +2,31 @@ import type { Command } from '../types/command';
 
 export class Shell {
 	readonly history: string[] = [];
+	private currentHistoryIndex: number | undefined;
+
+	get isHistoryAtEnd() {
+		return (
+			this.currentHistoryIndex === void 0 ||
+			this.currentHistoryIndex === this.history.length
+		);
+	}
 
 	clearHistory() {
 		this.history.length = 0;
+		this.currentHistoryIndex = undefined;
+	}
+
+	scrollHistory(direction: -1 | 1): string | undefined {
+		if (this.currentHistoryIndex === void 0) {
+			this.currentHistoryIndex = this.history.length;
+		}
+
+		this.currentHistoryIndex = Math.min(
+			this.history.length,
+			Math.max(0, this.currentHistoryIndex + direction)
+		);
+
+		return this.history[this.currentHistoryIndex];
 	}
 
 	async sendCommand(line: string, track = true) {

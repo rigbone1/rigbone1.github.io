@@ -1,6 +1,7 @@
 export class Terminal {
 	private readonly inputElem;
 	private readonly linesElem;
+	private currentInputBuffer = '';
 
 	constructor() {
 		this.linesElem = document.querySelector('.lines') as HTMLUListElement;
@@ -12,17 +13,36 @@ export class Terminal {
 		});
 
 		this.inputElem.addEventListener('keydown', (e: KeyboardEvent) => {
-			if (e.key !== 'Enter') {
-				return;
+			if (e.key === 'Enter') {
+				e.preventDefault();
+
+				this.print(this.inputElem.value);
+				shell.sendCommand(this.inputElem.value);
+
+				this.inputElem.value = '';
+				this.render();
+			} else if (e.key.startsWith('Arrow')) {
+				let line;
+
+				if (e.key === 'ArrowUp') {
+					if (shell.isHistoryAtEnd) {
+						this.currentInputBuffer = this.inputElem.value;
+					}
+
+					line = shell.scrollHistory(-1);
+				} else if (e.key === 'ArrowDown') {
+					line = shell.scrollHistory(1);
+				} else {
+					return;
+				}
+
+				if (!line) {
+					line = this.currentInputBuffer;
+				}
+
+				this.inputElem.value = line;
+				this.inputElem.selectionEnd = line.length;
 			}
-
-			e.preventDefault();
-
-			this.print(this.inputElem.value);
-			shell.sendCommand(this.inputElem.value);
-
-			this.inputElem.value = '';
-			this.render();
 		});
 
 		this.render();
