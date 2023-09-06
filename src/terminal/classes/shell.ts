@@ -37,6 +37,7 @@ export class Shell {
 			return;
 		}
 
+		// TODO throw error instead and decouple Shell from Terminal
 		try {
 			const commandFn = await this.resolveCommand(commandName);
 			track && this.history.push(line);

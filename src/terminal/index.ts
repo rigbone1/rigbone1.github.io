@@ -1,10 +1,12 @@
 import { Env } from './classes/env';
+import { FileSys } from './classes/filesystem';
 import { Shell } from './classes/shell';
 import { Terminal } from './classes/terminal';
 
 globalThis.env = new Env();
-globalThis.terminal = new Terminal();
+globalThis.fileSystem = new FileSys();
 globalThis.shell = new Shell();
+globalThis.terminal = new Terminal();
 
 terminal.focus();
 shell.sendCommand('echo Welcome! Type `help` for info', false);

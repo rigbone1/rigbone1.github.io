@@ -106,7 +106,7 @@ export class Terminal {
 
 		const path = document.createElement('span');
 		path.className = 'path';
-		path.textContent = env.path;
+		path.textContent = fileSystem.path;
 
 		domainElem.append(userhost, ':', path, '$');
 		return domainElem;
