@@ -1,3 +1,5 @@
 export class Env {
-	user = 'dave';
+	username = 'dave';
+	hostname = 'github.io';
+	path = '~';
 }

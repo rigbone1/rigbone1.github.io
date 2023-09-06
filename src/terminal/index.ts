@@ -7,9 +7,7 @@ globalThis.terminal = new Terminal();
 globalThis.shell = new Shell();
 
 terminal.focus();
-shell.sendCommand('echo Welcome! Type `help` for info').then(() => {
-	shell.clearHistory()
-})
+shell.sendCommand('echo Welcome! Type `help` for info', false);
 
 window.addEventListener('click', (e) => {
 	const elem = e.target as HTMLElement;

@@ -3,5 +3,5 @@ export default function (...args: string[]) {
 		return terminal.print('Error: you must specify a new name');
 	}
 
-	env.username = args[0];
+	env.hostname = args[0];
 }

@@ -1,3 +1,3 @@
 export default function () {
-	terminal.print(`You are ${env.user}`);
+	terminal.print(`You are ${env.username}`);
 }

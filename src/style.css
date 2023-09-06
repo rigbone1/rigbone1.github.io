@@ -32,11 +32,11 @@ body {
 	gap: 1ex;
 }
 
-.domain {
+.prompt {
 	display: flex;
 }
 
-.user {
+.userhost {
 	color: crimson;
 }
 
